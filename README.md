@@ -20,3 +20,4 @@
     - [bookdown.org/rdpeng/rprogdatascience](https://bookdown.org/rdpeng/rprogdatascience/)
   - [svmiller.com: An R Markdown Template for Academic Manuscripts](http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/)
 - [sylvaindeville.net: Writing academic papers in plain text with Markdown and Jupyter notebook](https://sylvaindeville.net/2015/07/17/writing-academic-papers-in-plain-text-with-markdown-and-jupyter-notebook/)
+- [CodiMD: Collaborative markdown notes](https://github.com/codimd)
