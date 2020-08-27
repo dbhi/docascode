@@ -149,6 +149,7 @@ Overall, the syntax looks nice, clear and powerful. It is to be noted that a bui
 
 <aside>
 - [asciidoctor.org/docs: Building blocks in AsciiDoc](https://asciidoctor.org/docs/asciidoc-writers-guide/#building-blocks-in-asciidoc)
+- [asciidoctor.org/docs: AsciiDoc vs Markdown](https://asciidoctor.org/docs/asciidoc-vs-markdown/)
 </aside>
 
 ### Drawbacks
