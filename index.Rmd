@@ -239,7 +239,7 @@ Pandoc is a swiss-army knife (written in Haskell) for markup format conversion w
 - [jgm/pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)
 </aside>
 
-There are many examples putting together pandoc filters to generate PDF and/or HTML output, but using a single specific template/theme for each [@gopinath13] [@kdheepak15] [@mcleod15] [@gallegos16] [@ogden17]. Sections "*Downside to using Markdown?*" and "*Bending Markdown to your will*" in [@kdheepak15] provide insightful comments; but the most explicit conclusion is shown in the figure of section "*TLDR*":
+There are many examples putting together pandoc filters to generate PDF and/or HTML output, but using a single specific template/theme for each [@gopinath13] [@kdheepak15] [@mcleod15] [@gallegos16] [@wagler17] [@ogden17]. Sections "*Downside to using Markdown?*" and "*Bending Markdown to your will*" in [@kdheepak15] provide insightful comments; but the most explicit conclusion is shown in the figure of section "*TLDR*":
 
 ![[@kdheepak15] Figure 1: Comparing Word, LaTeX and Markdown](img/learningcurve.png)
 
