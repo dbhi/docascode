@@ -220,6 +220,16 @@ A relevant exception is rendering of math equations. MathJax is a well-know open
 
 Another relevant caveat of LaTeX is the fairly steep learning curve. This is probably due to the huge numbers of resources available with partially or apparently overlapping features. On top of that, the archaic, verbose and apparently obscure macro language makes it less appealing than other (markup) languages in this analysis. In fact, that's one of the main motivations to use AsciiDoc/DocBook, Markdown or reStructuredText instead of plain LaTeX.
 
+## mdBook
+
+*TBW*
+
+<aside>
+- [rust-lang.github.io/mdBook](https://rust-lang.github.io/mdBook/)
+- [rust-lang/mdBook](https://github.com/rust-lang/mdBook)
+- [lbeckman314/mdbook-latex](https://github.com/lbeckman314/mdbook-latex)
+</aside>
+
 ## MkDocs
 
 *TBW*
