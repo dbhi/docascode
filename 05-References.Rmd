@@ -1,0 +1,5 @@
+# References
+
+- [scholarlymarkdown.com](http://scholarlymarkdown.com/)
+- [vincentdoerig/latex-css: A CSS library that makes your website look like a LaTeX document](https://github.com/vincentdoerig/latex-css)
+- [sylvaindeville.net: Writing academic papers in plain text with Markdown and Jupyter notebook](https://sylvaindeville.net/2015/07/17/writing-academic-papers-in-plain-text-with-markdown-and-jupyter-notebook/)

@@ -1,0 +1,9 @@
+## mdBook
+
+*TBW*
+
+<aside>
+- [rust-lang.github.io/mdBook](https://rust-lang.github.io/mdBook/)
+- [rust-lang/mdBook](https://github.com/rust-lang/mdBook)
+- [lbeckman314/mdbook-latex](https://github.com/lbeckman314/mdbook-latex)
+</aside>

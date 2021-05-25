@@ -15,7 +15,7 @@ jobs:
       run: docker build -t bookdown - < .github/Dockerfile
 
     - name: Build site
-      run: docker run --rm -v $(pwd):/src -e LANG=en-GB bookdown Rscript -e "rmarkdown::render('index.Rmd', 'distill::distill_article')"
+      run: docker run --rm -v /$(pwd)://src -e LANG=en-GB bookdown
 
     - name: Publish site to gh-pages
       if: github.event_name != 'pull_request'

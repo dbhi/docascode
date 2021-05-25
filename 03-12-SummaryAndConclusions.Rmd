@@ -1,0 +1,53 @@
+## Summary and conclusions
+
+The list of supported output formats (as far as the author is aware) is listed in Table \@ref(tab:markuplangs).
+Note that Static Site Generator (SST) is not a single tool, but it stands for a whole family of projects.
+
+<aside>
+If you are familiar with any of the tools and you feel that the information is not correct, please do not hesitate to
+[create an issue](https://github.com/dbhi/mdpaper/issues/new) or [open a PR](https://github.com/dbhi/mdpaper/compare).
+</aside>
+
+```{r markuplangs, tidy=FALSE, echo=FALSE}
+mat = matrix(
+  c(
+    'Static Site Generator', 'AsciiDoc', 'Doxygen', 'MkDocs', 'Pandoc', 'Sphinx',
+                      'Yes',      'Yes',     'Yes',    'Yes',    'Yes',    'Yes',
+                        '?',      'Yes',     'Yes',      '?',    'Yes',    'Yes',
+                        '?',      'Yes',     'Yes',      '?',      '?',    'Yes',
+                        '?',        '?',      'No',      '?',    'Yes',    'Yes'
+  ),
+  nrow=6,
+  ncol=5
+)
+knitr::kable(
+  mat,
+  align = 'ccccc',
+  booktabs = TRUE,
+  col.names = c('', 'HTML', 'LaTeX', 'man', 'EPUB'),
+  caption = 'Supported output formats in multiple languages/tools.'
+)
+```
+
+Most projects add custom extensions in the parser, in the generator and in the default template.
+Hence, it is almost impossible to reuse the same source for multiple tools, or even for multiple templates using the
+same tool.
+Potentially, multiple templates could exist which provide the same features as the default, but in practice that is not
+the case.
+
+<!--
+https://commonmark.org/
+-->
+
+<!--
+At first glance, Doxygen is not designed for applying custom templates to general purpose documents.
+So, although all the desired output formats are supported, it is not a suitable solution for documents other than the
+APIs and internals of software projects.
+Nevertheless, in some use cases it might be feasible to merge output from Doxygen into a larger document/site.
+
+Hence, the list of contestants is: AsciiDoc/DocBook, Pandoc and/or Sphinx.
+
+markdown is NOT a good language, but it is the most used
+
+multine paragraphs in markdown
+-->

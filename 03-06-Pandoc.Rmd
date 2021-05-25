@@ -1,0 +1,274 @@
+## Pandoc
+
+Pandoc is a swiss-army knife (written in Haskell) for markup format conversion which can handle ~40 formats.
+However, default features available in Markdown are very limited, because Markdown itself is very poorly defined for
+elaborating complex documents.
+As a result, multiple plugins or extension have been written to extend both Markdown parsers and generators for certain
+outputs.
+One of such extensions is `pandoc-citeproc`, allowing to handle citations and bibliography using CSL stylesheets.
+
+<aside>
+**W** [Pandoc](https://en.wikipedia.org/wiki/Pandoc)
+
+- [pandoc.org](https://pandoc.org/) ([jgm/pandoc](https://github.com/jgm/pandoc))
+- [jgm/pandoc-citeproc](https://github.com/jgm/pandoc-citeproc)
+</aside>
+
+There are many examples putting together pandoc filters to generate PDF and/or HTML output, but using a single specific
+template/theme for each [@gopinath13] [@kdheepak15] [@mcleod15] [@gallegos16] [@wagler17] [@ogden17].
+Sections "*Downside to using Markdown?*" and "*Bending Markdown to your will*" in [@kdheepak15] provide insightful
+comments; but the most explicit conclusion is shown in the figure of section "*TLDR*":
+
+![[@kdheepak15] Figure 1: Comparing Word, LaTeX and Markdown](img/learningcurve.png)
+
+Hence, assuming that our purpose is to support generating documents with complex custom features, the requirement to
+learn Haskell feels like a no-go.
+Nevertheless, it is a very suitable solution for not-so-complex documents, since reusing externally defined LaTeX
+templates is supported (unlike other tools, such as Sphinx).
+
+### Rmarkdown | RStudio {#rstudio}
+
+Rmarkdown is a package/system written in R to create dynamic analysis documents that combine code, rendered output (such
+as figures), and prose.
+It is focused on providing a notebook interface, similar to [jupyter](https://jupyter.org/) in the Python ecosystem.
+Yet, it uses pandoc under-the-hood to produce multiple output formats including HTML, PDF, Word, slideshows and more.
+
+<aside>
+**W** [RStudio](https://en.wikipedia.org/wiki/RStudio),
+[Project_Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter)
+
+- [rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/) ([rstudio/rmarkdown](https://github.com/rstudio/rmarkdown))
+- [rmarkdown.rstudio.com/formats](https://rmarkdown.rstudio.com/formats.html)
+</aside>
+
+As with plain pandoc, several users have proposed nice templates for HTML and/or PDF output.
+However, as explained, in many of these tools implemented features depend not only on the markup language and the
+engine, but also on the template.
+This is specially the case with rmarkdown.
+Although multiple document types can be written and several output formats are supported, in practice each document will
+likely provide a single valid output.
+
+<aside>
+- [One R Markdown Document, Fourteen Demos](https://rstudio.com/resources/rstudioconf-2020/one-r-markdown-document-fourteen-demos/)
+- [juba/rmdformats](https://github.com/juba/rmdformats#readthedown-format)
+- [svmiller.com: An R Markdown Template for Academic Manuscripts](http://svmiller.com/blog/2016/02/svm-r-markdown-manuscript/)
+</aside>
+
+For instance, *rticles* is a repository of 30+ templates to write scientific articles in rmarkdown, as explained in
+Chapter 13 of [@rmarkdown-definitive].
+However, there are no matching HTML templates.
+Furthermore, some of the existing templates require some features (e.g. cites) to be written in LaTeX.
+As a result, in most practical cases which use not only most basic features, different rmarkdown sources are required if
+multiple outputs (PDF and HTML) are to be generated.
+
+<aside>
+- [R Markdown: The Definitive Guide | Chapter 13 Journals](https://bookdown.org/yihui/rmarkdown/journals.html)
+- [rstudio/rticles: LaTeX Journal Article Templates for R Markdown](https://github.com/rstudio/rticles)
+</aside>
+
+Probably the most powerful and, at the same time, limiting feature of rmarkdown is precisely that it is based on R, and
+R knowledge is required to use it.
+Precisely, for table and figures to be properly identified as such, `knitr` needs to be used.
+That is, they need to be dynamically generated in R.
+Writing the content in plain markdown syntax will have it shown, but not semantically defined as an environment, with a
+label and a caption.
+
+#### Distill
+
+Opposite to *rticles*, *distill* is a publication format for scientific and technical writing, native to the
+web^[Precisely, it is the theme/template used in this document.].
+That is, it provides some features which are not supported by any matching template for LaTeX/PDF output.
+Still, it is a very nice looking template/theme, with some interesting and useful features.
+
+<aside>
+- [rstudio.github.io/distill](https://rstudio.github.io/distill) ([rstudio/distill](https://github.com/rstudio/distill))
+</aside>
+
+Interesting features:
+
+- Header block with authors, affiliations, date and citation (albeit not customizable).
+- Autogenerated table of contents (albeit unnumbered).
+- LaTeX math, citations and footnotes.
+  - Popup footnotes and citations.
+- Flexible figure layout options (displaying figures larger than the article text).
+- Dynamic tables with support for pagination.
+- Support for diagramming tools or JavaScript based interactive visualizations.
+- Composition of multiple articles into a website or a blog.
+- Asides (albeit on one side only, not supported for LaTeX/PDF, and not well integrated on small screens).
+- Nice autogenerated "References" section in the footer, using a BibTeX file (albeit with non-configurable citation style).
+- Handy "Corrections" section in the footer (albeit not-customizable).
+- Handy "Citation" section in the footer, which shows a BiBTeX source/entry.
+- Automatically include metadata compatible with Google Scholar.
+
+Caveats:
+
+- Cannot write a single article in multiple source files. Each article needs to be written in a single file.
+- Sections are unnumbered.
+- Headers don't have an anchor icon (to easily get a link to that specific header).
+- Cannot use Font Awesome icons, unless a `site` is built.
+- Asides cannot expand longer than the content they are horizontally tied to.
+- There is no option for showing "Last updated", apart from "Published".
+- Cannot use markdown in 'Affiliation' for adding multiple links. All the field is linked to a single URL (provided in
+  a separate conf field).
+- It seems not possible to customize the citation style. Neither in the metadata, nor the ref or the references list at
+  the end of the document.
+- biblatex is not supported.
+- The width of the content is too narrow for regular Full HD screens.
+  - The width of the *aside* column is also too narrow.
+- There is no sidebar, where the TOC might be better located. The TOC is currently shown at the top (only).
+- h3 headers look larger than h2 headers.
+- Quote font size should be slighly smaller.
+- Adding a *banner* image between the subtitle and the author/affiliation metadata would be useful.
+- Syntax colouring for code blocks?
+- Cannot collapse/expand figures, tables, code blocks, etc.
+- Asides are not properly displayed on small screens (smartphones).
+- Does not have a search option.
+- Does not have an always visible "Go to top" or "Got top ToC" button.
+
+#### Tufte Handouts
+
+Tufte Handouts allows to generate matching HTML and LaTeX/PDF outputs with the style that
+[Edward Tufte](https://en.wikipedia.org/wiki/Edward_Tufte) uses in his books and handouts.
+As far as the author is aware, this is the only package/template that provides matching styles for HTML and PDF output.
+
+<aside>
+- [rstudio.github.io/tufte](https://rstudio.github.io/tufte/) ([rstudio/tufte](https://github.com/rstudio/tufte))
+</aside>
+
+Interesting features:
+
+- Citations and footnotes are shown as asides.
+  - Both are nicely collapsed/expanded on small screens.
+- Flexible figure layout options (displaying figures larger than the article text).
+
+Caveats:
+
+- Sections are unnumbered.
+- Headers don't have an anchor icon (to easily get a link to that specific header).
+- There are no affiliation, citation or proper multi-author layout in the header.
+- Table of Contents?
+  - There is no sidebar, where the TOC might be better located.
+- There is no "References" section at the bottom of the HTML output.
+- In HTML, it would be desirable to show footnotes and citations as popups, and define asides explicitly.
+- Dynamic tables with support for pagination?
+- Support for diagramming tools or JavaScript based interactive visualizations?
+- Composition of multiple articles into a website or a blog?
+- No indication that the article has multiple versions.
+  - There is no option for showing "Last updated", apart from "Published".
+- Automatically include metadata compatible with Google Scholar?
+- Syntax colouring for code blocks?
+- Cannot collapse/expand figures, tables, code blocks, etc.
+- Does not have a search option.
+- Does not have an always visible "Go to top" or "Got top ToC" button.
+
+Overall, Tufte is a very interesting showcase of a single rmarkdown source being used to generate consistent HTML and
+PDF outputs.
+However, the style is very opinionated.
+It would be interesting for Tufte's HTML output to be compatible with *rticles* templates.
+
+#### Bookdown GitBook
+
+Bookdown is an R package that provides a ready-to-use engine to combine multiple rmarkdown documents as chapters of a
+single publication.
+It generates HTML, LaTeX/PDF, EPUB and/or Word output.
+It uses some built-in template(s) for LaTeX that allows to generate documents of type *article* or *report*/*book*.
+For HTML output, the default style is *GitBook*, based on [gitbook.com](https://www.gitbook.com/).
+
+<aside>
+- [bookdown.org](https://bookdown.org/) ([rstudio/bookdown](https://github.com/rstudio/bookdown))
+- [bookdown: Authoring Books and Technical Documents with R Markdown](https://bookdown.org/yihui/bookdown/)
+</aside>
+
+Bookdown supports some other alternative styles for HTML output.
+Precisely, there is an style based on [Bootstrap](http://getbootstrap.com/).
+It is also possible to use the Tufte style.
+However, other rmarkdown templates need to be specifically adapted for them to be used with bookdown.
+By the same token, although docs state that *rticles* can be used for bookdown's `pdf_book` output, in practice
+modifications are required.
+
+<aside>
+- [R Markdown: The Definitive Guide | 13.5 Linking with bookdown](https://bookdown.org/yihui/rmarkdown/rticles-bookdown.html)
+- [rstudio/distill#152](https://github.com/rstudio/distill/issues/152)
+- [umarcor/rticles/actions](https://github.com/umarcor/rticles/actions)
+</aside>
+
+Overall, bookdown provides nice default HTML and PDF outputs^[See, for example, [larsasplund.github.io/github-facts](https://larsasplund.github.io/github-facts/)],
+even though the styles are not particularly matching.
+
+Interesting features:
+
+- The document can be written in multiple rmarkdown sources. However, all of them are appended, there is no `include`/`input`.
+- Sections are numbered.
+- The table of contents is shown in the sidebar.
+- Search is supported.
+- LaTeX math, citations and footnotes.
+- References can be generated with biblatex and/or using CLS styles. References are shown at the end of each main
+  chapter/section and at the end of the document.
+- Supports Font Awesome icons.
+- The sidebar is properly handled in small screens.
+- In the topbar, the style (font, colour) con be modified, links to the source/history can be shown, links to the
+  corresponding PDF/EPUB/Word can be shown, and links to social networks are supported.
+
+Caveats:
+
+- Buttons in the header use/need JavaScript. It is not possible to right/middle click on them.
+- Headers don't have an anchor icon (to easily get a link to that specific header).
+- There are no affiliation, citation or proper multi-author layout in the header.
+- Asides are not supported.
+- In HTML, it would be desirable to show footnotes and citations as popups, and define asides explicitly.
+- Dynamic tables with support for pagination?
+- Support for diagramming tools or JavaScript based interactive visualizations?
+- No built-in indication that the article has multiple versions.
+- Automatically include metadata compatible with Google Scholar?
+- Syntax colouring for code blocks?
+- Cannot collapse/expand figures, tables, code blocks, etc.
+- There seems to be no built-in mechanism to combine multiple articles/documents in a single web site.
+
+Summarizing, bookdown's GitBook template provides the best navigation features in the HTML output.
+It would be useful to have the interesting features available in *distill* or *tufte*.
+
+Regarding the PDF output in bookdown, there is a repository named *thesisdown* where the LaTeX output is customized for
+30+ institutions.
+
+<aside>
+- [ismayc/thesisdown](https://github.com/ismayc/thesisdown)
+</aside>
+
+#### Pagedown
+
+Pagedown is another package for markdown that tries to bypass LaTeX by defining the layout in CSS and relying on web
+site printing tools to generate PDF.
+While the approach is interesting, it is not suitable for the types of documents that are the target of this analysis.
+Precisely, in order to generate an HTML layout that can be printed, all the dynamic features that take advantage of an
+interactive platform are lost.
+In practice, the result is similar to generating a PDF only, and then viewing it in a browser.
+Hence, this generator might be used as a replacement of LaTeX output, but complemented with another HTML output.
+Trying to use arbitrary outputs with the same rmarkdown source has the caveats explained above.
+
+<aside>
+- [rstudio.github.io/pagedown](https://rstudio.github.io/pagedown/) ([rstudio/pagedown](https://github.com/rstudio/pagedown))
+</aside>
+
+It is to be noted that this package/workflow is better understood as a trend that expects LaTeX to be *dead* soon.
+In [@latex-is-dead], the author of pagedown argues that "*it* (LaTeX) *will definitely survive for a few more years (maybe twenty or thirty years), but I believe HTML has much more potential to prosper*".
+However, at the same time, it is acknowledged that, "*in terms of typesetting, HTML cannot beat LaTeX, but it all depends on how good you want the typesetting to be*".
+The website of *page.js* is a very illustrative example: while the output is nice and clean, the quality is "just" good
+enough, and many features are missing as a web site.
+
+<aside>
+- [pagedjs.org](https://www.pagedjs.org/)
+- [paged.js](https://gitlab.pagedmedia.org/tools/pagedjs)
+</aside>
+
+#### Blogdown
+
+Blogdown is an R package that transforms rmarkdown sources into a content structure for Hugo.
+Hence, it is an interesting solution for R users that want to keep the rmarkdown workflow they are used to, when
+generating blog sites.
+However, in the context of this analysis, features are equivalent to the ones offered by Hugo alone.
+That is multiple HTML templates are available, but generating PDF through LaTeX (or pandoc) is not supported.
+
+<aside>
+- [blogdown: Creating Websites with R Markdown](https://bookdown.org/yihui/blogdown/)
+- [rstudio/blogdown](https://github.com/rstudio/blogdown)
+</aside>

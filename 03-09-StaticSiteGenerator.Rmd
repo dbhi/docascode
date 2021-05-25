@@ -1,0 +1,56 @@
+## Static Site Generator (SST)
+
+In the last 5-10 years there has been a trend to migrate web sites from engines with heavy logic to static site
+generators, thus trading data volume for runtime computation.
+Static sites are web sites composed of multiple standalone pages that are delivered to the browser exactly as stored, in
+contrast to dynamic web pages which are generated and typically customized for each user.
+In-between, static sites with JavaScript can provide some dynamic features, thus blurring the distinction.
+A term used in this context is Jamstack, which corresponds to JavaScript, APIs, and markup.
+
+<aside>
+**W** [Static web page](https://en.wikipedia.org/wiki/Static_web_page)
+
+- [staticsitegenerators.net](https://staticsitegenerators.net/)
+- [staticgen.com](https://www.staticgen.com)
+- [wiki.python.org: StaticSiteGenerator](https://wiki.python.org/moin/StaticSiteGenerator)
+- [jamstack.org](https://jamstack.org/)
+</aside>
+
+Nevertheless, it is not the purpose of this document to introduce static site generators.
+In this analysis, the most relevant issue to underline is that SSTs are primarily meant for generating HTML web sites.
+As a result, all PDF generation capabilities, if possible, are an afterthought.
+Typically, PDF outputs are equivalent (if not worse) to the results obtained with *pagedown*, *paged.js* or *ReLaXed*.
+
+Still, there are some SSTs which are worth introducing:
+
+### Golang (Hugo)
+
+*TBW*
+
+<aside>
+**W** [Hugo (software](https://en.wikipedia.org/wiki/Hugo_(software))
+
+- [gohugo.io](https://gohugo.io/) ([gohugoio](https://github.com/gohugoio/))
+</aside>
+
+- https://gohugo.io//content-management/formats/#list-of-content-formats
+
+### Ruby (Jekyll)
+
+*TBW*
+
+<aside>
+**W** [Jekyll (software)](https://en.wikipedia.org/wiki/Jekyll_%28software%29)
+
+- [jekyllrb.com](https://jekyllrb.com/)
+</aside>
+
+### JavaScript/TypeScript (Vue, React)
+
+*TBW*
+
+<aside>
+- [vuepress.vuejs.org](https://vuepress.vuejs.org)
+- [gridsome.org](https://gridsome.org)
+- [docusaurus.io](https://docusaurus.io/)
+</aside>

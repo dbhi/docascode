@@ -1,0 +1,54 @@
+# Requirements
+
+In order to find a single workflow that fits all the requirements, those need to be explicitly listed.
+In this section, requirements are organized in three categories: common/general, for HTML output only, and for PDF
+output only:
+
+## Common
+
+- Numbered and unnumbered sections
+- Bibliography (bibtex)
+- Glossary, acronyms, symbols...
+- Custom environments
+- TOC, list of figures, list of tables...
+- Show both "Published" and "Last updated"
+- Code listings with syntax highlighting, including importing/including sources from files
+- Cross-references:
+  - Headings
+  - Figures
+  - Tables
+  - Equations
+  - Code listings
+  - Other sites (intersphinx)
+- Support splitting sources in multiple documents (include)
+- Backrefs for footnotes and cites
+- View supported in GitHub/GitLab
+- Multiple versions
+- Real-time collaboration platform/service
+- Diagrams/Waveforms
+- Copy code-block
+- Internationalization and localization?
+
+## HTML
+
+- Multi-page site
+- View source, history, edit
+- Anchored headerings, figures, tables, equations, listings...
+- Search
+- Light/night theme/style
+- Download related PDF, EPUB, man...
+- Works on either large (Full HD) or small (smartphones) screens
+- (Custom) Header/footer
+- Three column (asides)
+- Share on social media
+- Shields/badges pointing to the repo, CI services, etc.
+- Popup footnotes, cites...
+- Icons (either Font Awesome or Material Design Icons)
+- Collapse/expand sections, figures, tables, code blocks, etc.
+- Dynamic tables
+
+## PDF
+
+- biblatex/biber support
+- Asides
+- Support (academic) publisher templates (what to do with asides?)

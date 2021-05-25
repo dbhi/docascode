@@ -1,0 +1,4 @@
+## Real-time collaboration
+
+- [etherpad](https://etherpad.org/)
+- [CodiMD: Collaborative markdown notes](https://github.com/codimd)

@@ -1,0 +1,84 @@
+## Sphinx
+
+Sphinx is a documentation generator written in Python by the Python community and initially focused on documenting
+Python projects.
+It converts reStructuredText files into HTML websites and other formats, such as PDF (through LaTeX), EPUB, texinfo and
+man.
+Nonetheless, other markup languages (say Markdown) are supported through *extensions*.
+Sphinx uses Jinja for HTML templating, which is a text-based engine, inspired by Django templates.
+Yet, "*the latex builder does not benefit from prepared themes*" [@sphinx-latex].
+A limited interface is provided for customization of some LaTeX options and elements, but the template is fixed.
+
+<aside>
+**W** [Sphinx (documentation generator)](https://en.wikipedia.org/wiki/Sphinx_(documentation_generator)), [reStructuredText](https://en.wikipedia.org/wiki/ReStructuredText)
+
+- [sphinx-doc.org](https://www.sphinx-doc.org) ([sphinx-doc/sphinx](https://github.com/sphinx-doc/sphinx))
+- [jinja.palletsprojects.com](https://jinja.palletsprojects.com/)
+- [djangoproject.com](https://www.djangoproject.com/)
+</aside>
+
+### Interesting features
+
+The main advantages of Sphinx are powerful cross-reference features supported by *rst*.
+Unlike Markdown, reStructuredText supports importing/including other sources and referencing the headers across them.
+Moreover, `sphinx.ext.intersphinx` allows referencing headers/sections in other independently built and published
+projects, by preserving the same syntax used for internal references.
+Overall, it is a great fit for distributed ecosystems.
+
+<aside>
+- [sphinx-doc.org: Link to other projects’ documentation](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
+</aside>
+
+Moreover, it supports writing blocks of source for some specific output, thus allowing next to each other description of
+different visualizations of the same data/info.
+
+### Drawbacks
+
+On the one hand, having a fixed LaTeX template makes Sphinx unsuitable for documents that need a pre-defined custom
+style.
+At the same time, as in AsciiDoc, multiple HTML themes/skins exist, but most of them feel like cosmetic variations of
+the same base template.
+The de facto standard theme [@rtd-theme] was created several years ago, with a framework and a layout/design that are
+getting outdated (last updated on Jan 2015 [@wyrm]).
+Moreover, maintainters refuse to support the theme being used outside of the service maintained by themselves.
+Some nice and more up to date themes exist, but unfortunately not all of them are open source.
+Thankfully, the communty is reacting and recently a very interesting solution based on Bootstrap was published:
+Sphinx TYPO3 theme [@typo3].
+
+<aside>
+- [sphinx-themes.org](https://sphinx-themes.org/)
+- [sphinxthemes.com](https://sphinxthemes.com/)
+- [documentation.divio.com](https://documentation.divio.com/) ([evildmp/documentation-system#6](https://github.com/evildmp/documentation-system/issues/6))
+</aside>
+
+On the other hand, although arguable, it is a common feeling that reStructuredText is less comfortable to get used to
+and to remember than Markdown.
+This is coherent with the fact that Markdown is more feature limited.
+Nevertheless, this should not be dismissed when approaching writers with different levels of expertise.
+
+Regarding extraction of documentation from sources, Sphinx does a nice job with *docstrings* defined in Python sources.
+It can navigate the hierarchy of a package/library and generate the documentation for each module, function, parameter,
+etc.
+There are language domains for C and C++ too; however support of other languages is quite limited.
+[sphinxcontrib-vhdldomain](https://github.com/Paebbels/sphinxcontrib-vhdldomain) and
+[pyVHDLParser](https://github.com/Paebbels/pyVHDLParser) are early work to add a domain for VHDL, as an extension to
+Sphinx.
+
+<aside>
+*W* [Docstring](https://en.wikipedia.org/wiki/Docstring)
+
+- [Sphinx: Domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html)
+- [Sphinx: More domains](https://www.sphinx-doc.org/en/master/usage/restructuredtext/domains.html#more-domains)
+</aside>
+
+Even though it is possible to write extensions, it's not something that the average user/developer can do easily.
+It is a low-level API that exposes many of the internals and requires a deep understanding of the tool [@sphinx-todo].
+In fact, extensions can be builders written from scratch, roles, directives, markup extensions or hooks, all under the
+same umbrella.
+
+<aside>
+- [Sphinx: Developing extensions for Sphinx](https://www.sphinx-doc.org/en/master/extdev/index.html)
+</aside>
+
+With regard to importing Markdown sources, it is supported but feature limited, due to the distinc feature set of the
+language.

@@ -1,0 +1,16 @@
+## ReLaXed
+
+ReLaXed is a tool written in JavaScript.
+The sources of the documents are written in a custom minimal syntax similar to Markdown or LaTeX, supporting typical
+features such as LaTeX-style mathematical equations (via MathJax), interactive plot/diagram generation through existing
+JavaScript or CSS frameworks, etc.
+Examples are really nice looking and modern.
+Unfortunately, similar to *pagedown* or *paged.js*, this is a very interesting approach to avoid LaTeX, but it is not
+suitable for the use cases with most complex typesetting requirements.
+
+<aside>
+- [RelaxedJS/ReLaXed](https://github.com/RelaxedJS/ReLaXed)
+</aside>
+
+This workflow seems to be specially suited for people familiar with web technologies, which know nothing about LaTeX.
+However, the learning curve for those who need to learn HTML, Pug, CSS and JavaScript doesn't seem to be easier.

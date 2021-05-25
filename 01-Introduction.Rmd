@@ -1,0 +1,45 @@
+# Introduction
+
+Different types of content need distinct features, regardless of the main workflow being common to any documentation
+product.
+Hence, what kind of outputs we want/expect to generate needs to be defined first.
+The author is mainly aiming at a system/workflow that fits six projects:
+[hdl](https://github.com/hdl),
+[dbhi](https://github.com/dbhi),
+[ghdl](https://github.com/ghdl),
+[VUnit](https://github.com/VUnit),
+[VHDL](https://github.com/VHDL)
+and
+[IEEE-P1076](https://gitlab.com/IEEE-P1076).
+All of them are projects related to the VHDL language, either in Academia, in the Industry, or in the open source
+ecosystems in GitHub/GitLab.
+The following is a list of types of documents generated in such contexts:
+
+- Reference of a CLI tool (written in Python, Golang, Ada, C...).
+- Tutorials and how-tos about CLI tools.
+- Blog posts.
+- Papers/Articles/Chapters, which are gathered in Reports/Books/Proceedings/Memos.
+- VHDL libraries and IP.
+- VHDL standard.
+- Landing site.
+
+Furthermore, on the one hand, most of the documentation is nowadays first read on screens (either a workstation, a
+laptop or an smartphone).
+Visualizing documents as web sites allows for dynamic and interactive visualization of data.
+On the other hand, the most thoughtful and self-contained content is better read outside and offline, thus, in paper.
+As a result, for any of the content types listed above (except the landing site) we want to generate two output formats,
+at least: HTML (website) and PDF.
+Some content fits other formats too, such as man pages or EPUB, but web browsers and paper are a need.
+
+It is to be noted that in this analysis open source tools/projects are considered only.
+This is because documentation for the target projects is automatically generated and updated using Continuous
+Integration (CI) services that are public, and mostly based on OCI containers.
+Using non-FLOSS tools, although possible, increases the setup and maintenance burden.
+Moreover, a priori no vendor tool exists which can satisfy the requirement to generate all the outputs.
+
+Last, but not least, the target is to find or compose a single workflow that suits all the types of documents.
+As discussed along this document, it is currently possible to generate all of them, using different sets of tools and/or
+accepting multiple feature limitations.
+But, asking users (developers) to learn multiple tools and languages providing exactly the same features is inefficient
+and is, thus, unlikely to succeed.
+On top of that, it increases the maintenance burden of the documentation system significantly.

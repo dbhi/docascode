@@ -1,0 +1,7 @@
+# State of the art
+
+It is to be noted that what can be achieved is not constrained by the markup language only.
+Some tools and templates extend the capabilities of the standard language, while others miss some of the basic features.
+As commented above, potentially any markup language can be paired with a tool and a template in order to generate any
+desired output format.
+However, we are interested in solutions currently usable off the shelf.

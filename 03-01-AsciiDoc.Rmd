@@ -1,0 +1,62 @@
+## AsciiDoc | DocBook
+
+AsciiDoc is a document format semantically equivalent to DocBook XML.
+Hence, the claim is that apart from the default HTML5 output provided by AsciiDoc tools, it is also possible to produce
+PDF, LaTeX, man pages, e-books, etc. by using DocBook toolchains.
+AsciiDoc tooling was initially written in Python, but it has been replaced by Asciidoctor, which is written in Ruby.
+It has built-in converters and templates to produce HTML5, DocBook and man pages.
+Moreover, it uses Tilt for templating, which allows users to customize the generated output without writing a custom
+converter.
+The default HTML5 theme is based on [Foundation](https://foundation.zurb.com/).
+
+<aside>
+**W** [AsciiDoc](https://en.wikipedia.org/wiki/AsciiDoc), [DocBook](https://en.wikipedia.org/wiki/DocBook)
+
+- [asciidoc.org](https://asciidoc.org/)
+- [asciidoctor.org](https://asciidoctor.org/) ([asciidoctor/asciidoctor](https://github.com/asciidoctor/asciidoctor))
+- [rtomayko/tilt](https://github.com/rtomayko/tilt)
+</aside>
+
+### Interesting features
+
+Overall, the syntax looks nice, clear and powerful.
+It is to be noted that a built-in mechanism is provided for defining *blocks* with custom parameters and layout.
+Those are named *delimited blocks*.
+That's a powerful mechanism that, at first sight, allows users to extend the markup language and matching templates
+without having to deal with the backend/generator.
+That is, no Ruby knowledge is required, a priori, for creating and using custom *delimited block* types.
+
+<aside>
+- [asciidoctor.org/docs: Building blocks in AsciiDoc](https://asciidoctor.org/docs/asciidoc-writers-guide/#building-blocks-in-asciidoc)
+- [asciidoctor.org/docs: AsciiDoc vs Markdown](https://asciidoctor.org/docs/asciidoc-vs-markdown/)
+</aside>
+
+### Drawbacks
+
+Direct PDF generation through [Prawn](https://github.com/prawnpdf/prawn) is supported.
+Unfortunately, due to the context explained above, LaTeX output is a requirement for the author, and this workflow is
+not completely explained in the docs.
+There are brief references to `a2x` (which uses either Apache FOP or `dblatex`) and `asciidoctor-fopub`.
+Among those, `dblatex` seems the most adequate, because `fopub` requires passing XSL parameters or modifying the XSLT
+for altering the PDF output.
+There is also `asciidoctor-latex`, which defines an extended syntax to closely match some LaTeX features (mathematical
+formulas and environments); it can generate HTML or LaTeX.
+Still, the first class citizen in AsciiDoc seems to be HTML5 output, and much of the docs are focused on it.
+Unfortunately, the author did not had time yet for trying the different alternatives for generating LaTeX output.
+Anyway, ready-to-use templates for journal articles à la [rticles](#rstudio) seem not to be available.
+
+<aside>
+- [asciidoctor.org/docs: PDFs](https://asciidoctor.org/docs/user-manual/#pdfs)
+- [dblatex.sourceforge.net](http://dblatex.sourceforge.net/)
+- [asciidoctor/asciidoctor-fopub](https://github.com/asciidoctor/asciidoctor-fopub)
+- [asciidoctor/asciidoctor-latex](https://github.com/asciidoctor/asciidoctor-latex)
+</aside>
+
+Regarding templating, multiple HTML themes are available and it seems easy to customize the CSS output.
+However, the author did not find examples showcasing different templates with a clearly different structure/layout.
+That is, themes or skins are available, but not templates.
+
+<aside>
+- [themes.asciidoctor.org/preview](http://themes.asciidoctor.org/preview/)
+- [Produce Custom Themes Using the Asciidoctor Stylesheet Factory](https://asciidoctor.org/docs/produce-custom-themes-using-asciidoctor-stylesheet-factory/)
+</aside>

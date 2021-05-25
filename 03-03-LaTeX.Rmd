@@ -1,0 +1,71 @@
+## LaTeX
+
+LaTeX (a set of macros for TeX to interpret) is the most known plain text based document preparation system.
+The ecosystem has been growing and evolving for more than 50 years, and it is very used in Academia as well as for
+preparation and publication of books that contain complex material.
+It is the de facto free software standard for high quality typesetting.
+Traditional output formats are DVI, PostScript or PDF.
+Although it can be used as an standalone system, it is typically used as an intermediate format.
+Other tools in this analysis (e.g. DocBook, Pandoc and/or Sphinx), use LaTeX as part of the pipeline for generating PDF.
+
+<aside>
+**W** [LaTeX](https://en.wikipedia.org/wiki/LaTeX),
+[TeX](https://en.wikipedia.org/wiki/TeX),
+[Device independent file format](https://en.wikipedia.org/wiki/Device_independent_file_format),
+[PostScript](https://en.wikipedia.org/wiki/PostScript),
+[PDF](https://en.wikipedia.org/wiki/PDF)
+
+- [latex-project.org](https://www.latex-project.org/)
+- [latex3](https://github.com/latex3)
+</aside>
+
+### Interesting features
+
+During so many years, several thousand packages have been contributed to Comprehensive TeX Archive Network (CTAN), which
+cover very general requirements and also very specific features.
+Support of different languages, character sets, currencies, math, etc. are some of the most known features, along with
+built-in automatic numbering, cross-referecing, footnotes, list generation, etc.
+At the same time, [tex.stackexchange.com](https://tex.stackexchange.com/) is a very active and welcoming community where
+package authors do typically help new users.
+Furthermore, thanks to drawing capabilities provided by PGF and TikZ, a whole category on their own, programatic
+generation of complex and very high quality diagrams, plots, etc. is one of the most relevant features.
+For example, in the context of hardware design, *tikz-timing* package allows describing waveforms.
+
+<aside>
+- [ctan.org](https://www.ctan.org/)
+- [ctan.org/pkg/pgf](https://ctan.org/pkg/pgf)
+- [ctan.org/pkg/pgf](https://www.ctan.org/pkg/pgf)
+- [ctan.org/pkg/tikz-timing](https://ctan.org/pkg/tikz-timing)
+- [texample.net/tikz/examples](https://texample.net/tikz/examples/)
+</aside>
+
+### Drawbacks
+
+The main limitation of LaTeX is that the whole ecosystem is focused on generating printable documents.
+Well, actually, documents with very specific page layout requirements.
+Conversely, in HTML the exact rendering is not specified in the document.
+As a result, there is no mechanism to nicely browse a LaTeX document as an interactive HTML website.
+Some very interesting CSS templates exist for generating web sites that feel familiar to LaTeX documents.
+However, those are not expected to be matched with arbitrary LaTeX sources, but manually written instead.
+
+<aside>
+- [texfaq.org: Conversion from (La)TeX to HTML](https://www.texfaq.org/FAQ-LaTeX2HTML)
+- [latex.now.sh](https://latex.now.sh/) ([vincentdoerig/latex-css](https://github.com/vincentdoerig/latex-css))
+</aside>
+
+A relevant exception is rendering of math equations.
+MathJax is a well-know open source JavaScript library that provides a display engine for LaTeX, MathML and AsciiMath
+notation.
+Almost any other tool in this analysis does use MathJax for displaying LaTeX equations in HTML.
+
+<aside>
+**W** [MathJax](https://en.wikipedia.org/wiki/MathJax)
+
+- [mathjax.org](https://www.mathjax.org/) ([mathjax/MathJax](https://github.com/mathjax/MathJax))
+</aside>
+
+Another relevant caveat of LaTeX is the fairly steep learning curve.
+This is probably due to the huge numbers of resources available with partially or apparently overlapping features.
+On top of that, the archaic, verbose and apparently obscure macro language makes it less appealing than other (markup)
+languages in this analysis.
+In fact, that's one of the main motivations to use AsciiDoc/DocBook, Markdown or reStructuredText instead of plain LaTeX.
