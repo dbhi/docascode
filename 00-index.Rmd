@@ -13,7 +13,7 @@ bibliography: refs.bib
 output:
   distill::distill_article:
     toc: true
-    toc_depth: 4
+    toc_depth: 5
 repository_url: https://github.com/dbhi/mdpaper
 citation_url: https://dbhi.github.io/mdpaper
 ---
