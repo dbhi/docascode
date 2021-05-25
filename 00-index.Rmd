@@ -51,11 +51,11 @@ The chain might include multiple conversions to multiple output formats (say HTM
 ></a><!--
 -->
 <a
-  title="'build' workflow Status"
-  href="https://github.com/dbhi/mdpaper/actions?query=workflow%3Abuild"
+  title="'Build' workflow Status"
+  href="https://github.com/dbhi/mdpaper/actions?query=workflow%3ABuild"
 ><img
-  alt="'build' workflow Status"
-  src="https://img.shields.io/github/workflow/status/dbhi/mdpaper/build?longCache=true&style=flat-square&logo=github&label=build"
+  alt="'Build' workflow Status"
+  src="https://img.shields.io/github/workflow/status/dbhi/mdpaper/Build?longCache=true&style=flat-square&logo=github&label=Build"
   data-external="1"
 ></a>
 </aside>
