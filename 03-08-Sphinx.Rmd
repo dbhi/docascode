@@ -19,7 +19,7 @@ A limited interface is provided for customization of some LaTeX options and elem
 
 ### Interesting features
 
-The main advantages of Sphinx are powerful cross-reference features supported by *rst*.
+The main advantage of Sphinx is powerful cross-reference support.
 Unlike Markdown, reStructuredText supports importing/including other sources and referencing the headers across them.
 Moreover, `sphinx.ext.intersphinx` allows referencing headers/sections in other independently built and published
 projects, by preserving the same syntax used for internal references.
@@ -29,8 +29,40 @@ Overall, it is a great fit for distributed ecosystems.
 - [sphinx-doc.org: Link to other projects’ documentation](https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html)
 </aside>
 
-Moreover, it supports writing blocks of source for some specific output, thus allowing next to each other description of
-different visualizations of the same data/info.
+Moreover, it supports writing specific blocks of source for some output format only, thus allowing next to each other
+description of different visualizations of the same data/info.
+
+It is written in Python and was born in the Python community. Due to the momentum of the Python language in several
+areas, Sphinx is probably the most used static site generator. [Read The Docs](https://readthedocs.org/) is a hosted
+service based on Sphinx, which provides integration with GitHub and other forge services; it is the documentation
+solution used by thousands of projects. Furthermore, Sphinx is used for documenting the Linux Kernel
+(see [lwn.net/Articles/692704](https://lwn.net/Articles/692704/)). As a result, there are dozens of [extensions](https://www.sphinx-doc.org/en/master/usage/extensions/index.html)
+for all kinds of integrations.
+
+Sphinx is the most used documentation generation tool in the open source EDA tooling ecosystem.
+The following sites are based on Sphinx:
+
+- [boolector.github.io](https://boolector.github.io)
+- [docs.cocotb.org](https://docs.cocotb.org)
+- [docs.verilogtorouting.org](https://docs.verilogtorouting.org)
+- [EDAA-org.github.io](https://edaa-org.github.io/)
+- [Edalize.rtfd.io](https://edalize.rtfd.io)
+- [FuseSoC.rtfd.io](https://fusesoc.rtfd.io)
+- [ghdl.github.io/ghdl](https://ghdl.github.io/ghdl)
+- [ghdl.github.io/ghdl-cosim](https://ghdl.github.io/ghdl-cosim)
+- [IEEE-P1076.gitlab.io](https://ieee-p1076.gitlab.io)
+- [im-tomu.github.io/fomu-workshop](https://im-tomu.github.io/fomu-workshop)
+- [juanmard.github.io/icestudio](https://juanmard.github.io/icestudio)
+- [pydoit.org/contents](https://pydoit.org/contents.html)
+- [pyVHDLParser.rtfd.io](https://pyvhdlparser.rtfd.io)
+- [SpinalHDL.github.io/SpinalDoc-RTD](https://spinalhdl.github.io/SpinalDoc-RTD)
+- [SymbiFlow.rtfd.io](https://symbiflow.rtfd.io)
+- [terostechnology.github.io/terosHDLdoc](https://terostechnology.github.io/terosHDLdoc)
+- [tsfpga.com](https://tsfpga.com/)
+- [umarcor.github.io/OSVB](https://umarcor.github.io/osvb)
+- [vhdl.github.io/pyVHDLModel](https://vhdl.github.io/pyVHDLModel)
+- [vunit.github.io](http://vunit.github.io)
+- [wishbone-interconnect.org/specs/b3.1](https://wishbone-interconnect.org/specs/b3.1/)
 
 ### Drawbacks
 
