@@ -5,7 +5,7 @@ Note that Static Site Generator (SST) is not a single tool, but it stands for a 
 
 <aside>
 If you are familiar with any of the tools and you feel that the information is not correct, please do not hesitate to
-[create an issue](https://github.com/dbhi/mdpaper/issues/new) or [open a PR](https://github.com/dbhi/mdpaper/compare).
+[create an issue](https://github.com/dbhi/docascode/issues/new) or [open a PR](https://github.com/dbhi/docascode/compare).
 </aside>
 
 ```{r markuplangs, tidy=FALSE, echo=FALSE}
