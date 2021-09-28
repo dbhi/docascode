@@ -64,6 +64,13 @@ The following sites are based on Sphinx:
 - [vunit.github.io](http://vunit.github.io)
 - [wishbone-interconnect.org/specs/b3.1](https://wishbone-interconnect.org/specs/b3.1/)
 
+#### Pybtex!
+
+- [pybtex.org](https://pybtex.org)
+- [mcmtroffaes/sphinxcontrib-bibtex](https://github.com/mcmtroffaes/sphinxcontrib-bibtex)
+  - [sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html)
+  - [sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html](https://sphinxcontrib-bibtex.readthedocs.io/en/latest/usage.html)
+
 ### Drawbacks
 
 On the one hand, having a fixed LaTeX template makes Sphinx unsuitable for documents that need a pre-defined custom
@@ -114,3 +121,8 @@ same umbrella.
 
 With regard to importing Markdown sources, it is supported but feature limited, due to the distinc feature set of the
 language.
+
+### ToDo
+
+- Multiple authors
+- [executablebooks/MyST-Parser](https://github.com/executablebooks/MyST-Parser)
